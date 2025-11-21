@@ -14,8 +14,10 @@ const main = async () => {
       return;
     }
 
+    const type = checkedTypeInput.value === 'none' ? undefined : checkedTypeInput.value;
+
     const blob = await toBlob(page, {
-      type: checkedTypeInput.value,
+      type,
     })
     if (!blob) {
       alert('Failed to capture the page');
@@ -24,11 +26,12 @@ const main = async () => {
 
     console.log(blob);
 
-    resultInfo.textContent = `
-      type: ${blob.type}
-      size: ${blob.size} bytes
-      url: ${URL.createObjectURL(blob)}
-    `;
+    resultInfo.textContent = `options:
+    type: ${type}
+generated blob:
+    type: ${blob.type}
+    size: ${blob.size} bytes
+    url: ${URL.createObjectURL(blob)}`;
     resultImage.src = URL.createObjectURL(blob);
   }
 

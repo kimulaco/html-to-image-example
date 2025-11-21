@@ -82,6 +82,12 @@ h2 {
   gap: 1em;
 }
 
+.result-info pre {
+  padding: 2em;
+  background-color: #eee;
+  text-align: left;
+}
+
 .result-image {
   border: 1px solid #ccc;
 }
