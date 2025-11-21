@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html-to-image-example</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="page">
+        <a href="https://vite.dev" target="_blank">
+          <img
+            src="./vite.svg"
+            width="96"
+            height="96"
+            class="logo"
+            alt="Vite logo"
+          />
+        </a>
+        <a href="https://www.typescriptlang.org/" target="_blank">
+          <img
+            src="./typescript.svg"
+            width="96"
+            height="96"
+            class="logo
+            vanilla"
+            alt="TypeScript logo"
+          />
+        </a>
+
+        <h1>html-to-image type example</h1>
+
+        <form id="form" class="form card">
+          <h2>type</h2>
+          <div class="radio-group">
+            <label for="type-none">
+              <input type="radio" name="type" id="type-none" value="none">
+              <span>none</span>
+            </label>
+            <label for="type-jpeg">
+              <input type="radio" name="type" id="type-jpeg" value="image/jpeg">
+              <span>image/jpeg</span>
+            </label>
+            <label for="type-png">
+              <input type="radio" name="type" id="type-png" value="image/png">
+              <span>image/png</span>
+            </label>
+            <label for="type-webp">
+              <input type="radio" name="type" id="type-webp" value="image/webp">
+              <span>image/webp</span>
+            </label>
+          </div>
+          <button type="submit">Capture this page</button>
+        </form>
+      </div>
+
+      <div class="result card">
+        <h2>Result</h2>
+        <div class="result-info"><pre id="result-info"></pre></div>
+        <img id="result-image" class="result-image" src="" alt="Result image">
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
