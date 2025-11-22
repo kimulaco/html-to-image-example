@@ -14,11 +14,14 @@ const main = async () => {
       return;
     }
 
-    const type = checkedTypeInput.value === 'none' ? undefined : checkedTypeInput.value;
-
-    const blob = await toBlob(page, {
+    const type = checkedTypeInput.value === 'undefined' ? undefined : checkedTypeInput.value;
+    const options = {
       type,
-    })
+    }
+
+    console.log(options);
+
+    const blob = await toBlob(page, options)
     if (!blob) {
       alert('Failed to capture the page');
       return;
